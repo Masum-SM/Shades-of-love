@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { loginUser, authError } = useAuth();
+  const { loginUser, authError, signInWithGoogle, isLoading } = useAuth();
 
   const location = useLocation();
   const history = useHistory();
@@ -20,6 +21,9 @@ const Login = () => {
   const handleLogin = (e) => {
     loginUser(loginData.email, loginData.password, location, history);
     e.preventDefault();
+  };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle(location, history);
   };
 
   return (
@@ -81,6 +85,18 @@ const Login = () => {
                 </Link>
               </p>
             </form>
+            <button
+              onClick={handleGoogleSignIn}
+              type="submit"
+              className="btn google-btn m-3"
+            >
+              Google Sign In
+            </button>
+            {isLoading && (
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            )}
           </div>
         </div>
       </div>

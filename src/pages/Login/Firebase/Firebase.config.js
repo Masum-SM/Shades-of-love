@@ -1,9 +1,10 @@
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+  apiKey: "AIzaSyCRNa-6HsiRbrMaygjRyttaCGyo4w4lWUg",
+  authDomain: "shades-of-love.firebaseapp.com",
+  projectId: "shades-of-love",
+  storageBucket: "shades-of-love.appspot.com",
+  messagingSenderId: "81376301018",
+  appId: "1:81376301018:web:e4a7ddd57f418a4b857ae3",
+  measurementId: "G-01HJW8QCYS",
 };
 export default firebaseConfig;
